@@ -19,13 +19,13 @@ $connecction = new mysqli($servername, $username, $password, $database);
 <h3> *WARNING ALL INFORMATION WILL BE DELETED ASSOCIATED WITH BADGE NUMBER*</h3>
 
 <form action="" method="POST">
-    Contractor Badge: <input type="number" name="badge_number"><br>
+    Contractor Badge: <input type="number" name="id"><br>
     <input type="submit">
 </form>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $badge_number = $_POST["badge_number"];
-    $sql = "DELETE FROM Contractors WHERE badge_number = {$badge_number}";
+    $id = $_POST["id"];
+    $sql = "DELETE FROM Contractors WHERE id = {$id}";
     if ($conn->query($sql) === TRUE) {
         echo "{$conn->affected_rows} deleted.";
       } else {

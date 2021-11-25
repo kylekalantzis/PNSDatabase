@@ -24,11 +24,11 @@ echo "Connected successfully";
 
 <!-- Selects entire database for view -->
 <?php
-$sql = "SELECT badge_number, Name, phone_number, email, department, job_title, security_clearance FROM Contractors";
+$sql = "SELECT id, Name, phone_number, email, department, job_title, security_clearance FROM Contractors";
 $result = $conn->query($sql);
 if ($result->num_rows > 0){
     while ($row = $result->fetch_assoc()) {
-        echo "<br> Badge Id: " . $row["badge_number"]  . " - Name: " . $row["Name"] . "<br> Phone Number: " . $row["phone_number"].
+        echo "<br> ID: " . $row["id"]  . " - Name: " . $row["Name"] . "<br> Phone Number: " . $row["phone_number"].
         "Email: " . $row["email"] . "Department:" . $row["department"] . "Job Title:" . $row["job_title"] . 
         "<br> Security Clearance: " . $row["security_clearance"] . "<br>";
     }

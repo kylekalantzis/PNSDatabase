@@ -31,7 +31,7 @@ CREATE TABLE Military
     security_clearance VARCHAR(20) NULL
 );
 
--- Create ETS Table --
+-- TO-DO Create ETS Table --
 
 INSERT INTO Contractors (Name, phone_number, email, department, job_title, security_clearance)
 VALUES
