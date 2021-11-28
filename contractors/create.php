@@ -5,7 +5,13 @@ $username = "root";
 $password = "Kyle1996";
 $database = "PNSDatabase";
 
-$connection = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected to the PNS Database";  
+
 ?>
 <!DOCTYPE HTML>
 <HEAD>
@@ -19,22 +25,20 @@ $connection = new mysqli($servername, $username, $password, $database);
 <h1>Contractors</h1>
 
 
-<div class ="form_create">
-    <form_create>
-    <h4>Creating new entry for Contractor </h4>
-<form action = "" method="POST">
-    Name: <input type="text" name="Name"><br>
-    Phone Number: <input type="text" name="Name">(xxxxxxxxxx format)<br>
-    Email: <input type="text" name="email"><br>
-    Department: <input type="text" name="department"><br>
-    Job Title: <input type="text" name="job_title"><br>
-    Security Clearance <input type="text" name="security_clearance"><br>
-    <input type="submit">
-
- 
+<h4>Creating new entry for Contractor </h4>
+<form action="" method="POST">
+        Name: <input type="text" name="Name"><br>
+        Phone Number: <input type="text" name="phone_number">(xxxxxxxxxx format)<br>
+        Email: <input type="text" name="email"><br>
+        Department: <input type="text" name="department"><br>
+        Job Title: <input type="text" name="job_title"><br>
+        Security Clearance <input type="text" name="security_clearance"><br>
+        <input type="submit">
+</form>
+</body>
+</html>
 <?php
-// Inputs Values into Contractor table
-if ($_SERVER["REQUEST METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Name = $_POST["Name"];
     $phone_number = $_POST["phone_number"];
     $email = $_POST["email"];
@@ -42,15 +46,14 @@ if ($_SERVER["REQUEST METHOD"] == "POST") {
     $job_title = $_POST["job_title"];
     $security_clearance = $_POST["security_clearance"];
 
-    $sql = "INSERT INTO Contractors (Name, phone_number, email, department, job_title, security_clearance)
-    VALUES ('{$Name}','{$phone_number}', '{$email}','{$department}', '{$job_title}', '{$security_clearance}')";
-    if ($connection->query($sql) == TRUE) {
-        echo "New Contractor added to PNS Database";
-    } else {
+    $sql = "INSERT INTO Contractors (Name, phone_number, email, department, job_title, security_clearance) VALUES ('{$Name}','{$phone_number}', 
+    '{$email}','{$department}', '{$job_title}', '{$security_clearance}')";
+    if ($conn->query($sql) === TRUE) {
+        echo "New contractor has been added";
+    }   else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-} ?>
-</form>
-</form_create>
-</body>
+} 
+?>
+
 

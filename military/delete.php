@@ -5,7 +5,7 @@ $username = "root";
 $password = "Kyle1996";
 $database = "PNSDatabase";
 
-$connecction = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($servername, $username, $password, $database);
 ?>
 <!DOCTYPE HTML>
 <HEAD>
@@ -19,13 +19,13 @@ $connecction = new mysqli($servername, $username, $password, $database);
 <h3> *WARNING ALL INFORMATION WILL BE DELETED ASSOCIATED WITH BADGE NUMBER*</h3>
 
 <form action="" method="POST">
-    Military Badge: <input type="number" name="mil_badge_number"><br>
+    Military Badge: <input type="number" name="mil_id"><br>
     <input type="submit">
 </form>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $mil_badge_number = $_POST["mil_badge_number"];
-    $sql = "DELETE FROM Military WHERE mil_badge_number = {$mil_badge_number}";
+    $mil_id = $_POST["mil_id"];
+    $sql = "DELETE FROM Military WHERE mil_id={$mil_id}";
     if ($conn->query($sql) === TRUE) {
         echo "{$conn->affected_rows} deleted.";
       } else {

@@ -5,7 +5,7 @@ $username = "root";
 $password = "Kyle1996";
 $database = "PNSDatabase";
 
-$connecction = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($servername, $username, $password, $database);
 ?>
 <!DOCTYPE HTML>
 <HEAD>

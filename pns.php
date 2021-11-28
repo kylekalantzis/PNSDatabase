@@ -6,7 +6,12 @@ $password = "Kyle1996";
 $database = "PNSDatabase";
 
 $conn = new mysqli($servername, $username, $password, $database);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected to the PNS Database";  
 ?>
+
 
 <!-- Website Interface -->
 <!DOCTYPE HTML>
