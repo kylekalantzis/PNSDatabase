@@ -29,7 +29,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0){
     while ($row = $result->fetch_assoc()) {
         echo "<br> Mil ID: " . $row["mil_id"]  . " - Name: " . $row["Name"] . "<br> Phone Number: " . $row["phone_number"].
-        "Email: " . $row["email"] . "Department:" . $row["department"] . "Job Title:" . $row["job_title"] . 
+        "<br> Email: " . $row["email"] . "<br> Department: " . $row["department"] . "<br> Job Title: " . $row["job_title"] . 
         "<br> Security Clearance: " . $row["security_clearance"] . "<br>";
     }
 } else {
