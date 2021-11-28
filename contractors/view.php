@@ -28,8 +28,8 @@ $sql = "SELECT id, Name, phone_number, email, department, job_title, security_cl
 $result = $conn->query($sql);
 if ($result->num_rows > 0){
     while ($row = $result->fetch_assoc()) {
-        echo "<br> ID: " . $row["id"]  . " - Name: " . $row["Name"] . "<br> Phone Number: " . $row["phone_number"].
-        "Email: " . $row["email"] . "Department:" . $row["department"] . "Job Title:" . $row["job_title"] . 
+        echo "<br> ID: " . $row["id"]  . " - Name: " . $row["Name"] . "<br> Phone Number: " . $row["phone_number"] .
+        "<br> Email: " . $row["email"] . "<br> Department: " . $row["department"] . "<br> Job Title: " . $row["job_title"] . 
         "<br> Security Clearance: " . $row["security_clearance"] . "<br>";
     }
 } else {
