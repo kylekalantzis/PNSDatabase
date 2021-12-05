@@ -23,11 +23,11 @@ echo "Connected successfully";
 <a href="http://localhost/COMP780_Project/pns.php">Go Back</a>
 
 <?php
-$sql = "SELECT mil_id, date_of_enlistment, date_of_expiration, term, FROM ETS";
+$sql = "SELECT mil_id, date_of_enlistment, date_of_expiration, term FROM ETS";
 $result = $conn->query($sql);
 if ($result->num_rows > 0){
     while ($row = $result->fetch_assoc()) {
-        echo "<br> Mil ID: " . $row["mil_id"]  . " - Date of Enlistment: " . $row["date_of_enlistment"] . 
+        echo "<br> Mil ID: " . $row["mil_id"]  . "<br> - Date of Enlistment: " . $row["date_of_enlistment"] . 
         "<br> Date of Expiration: " . $row["date_of_expiration"]. "<br> Term #: " . $row["term"] . "<br>";
     }
 } else {

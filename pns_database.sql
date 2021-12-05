@@ -124,6 +124,5 @@ VALUES
  ('24', '5/12/2020', '5/12/2023', '1st'),
  ('25', '3/15/2019', '3/15/2022', '2nd');
 
---SELECT * FROM ETS;
--- SELECT * FROM Contractors;
--- SELECT * FROM Military;
+ SELECT * FROM Contractors;
+SELECT * FROM Military;
