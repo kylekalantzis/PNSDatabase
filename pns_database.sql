@@ -31,8 +31,15 @@ CREATE TABLE Military
     `security_clearance` VARCHAR(20) NULL
 );
 
--- TO-DO Create ETS Table --
+CREATE TABLE ETS
+(
+    `mil_id` INT(10),
+    `date_of_enlistment` VARCHAR(50) NOT NULL,
+    `date_of_expiration` VARCHAR(50) NOT NULL,
+    `term` VARCHAR(3) NOT NULL,
+    FOREIGN KEY (mil_id) REFERENCES Military(mil_id)
 
+);
 INSERT INTO Contractors (Name, phone_number, email, department, job_title, security_clearance)
 VALUES
  ('Martainn Stolli', '1478247556', 'mstolli0@reference.com', 'Accounting', 'VP Quality Control', 'Top-Secret'),
@@ -61,7 +68,7 @@ VALUES
  ('Brnaba Connal', '3967060532', 'bconnaln@accuweather.com', 'Legal', 'Financial Advisor', 'Secret'),
  ('Gill Bicheno', '5702639292', 'gbichenoo@blinklist.com', 'Business Development', 'Nurse Practicioner', 'Secret');
 
-INSERT INTO Military (full_name, phone_number, email, department, job_title, security_clearance)
+INSERT INTO Military (Name, phone_number, email, department, job_title, security_clearance)
 VALUES
  ('Vina O'' Kelleher', '6547820923', 'vop@csmonitor.com', 'Engineering', 'Analog Circuit Design manager', 'Top-Secret'),
  ('Roseanne Kuhnhardt', '1849032483', 'rkuhnhardtq@discovery.com', 'Research and Development', 'Physical Therapy Assistant', 'Secret'),
@@ -88,5 +95,14 @@ VALUES
  ('Leroy Benns', '2412274172', 'lbenns1b@adobe.com', 'Accounting', 'Payment Adjustment Coordinator', 'Secret'),
  ('Patrick How to preserve', '4658736319', 'phow1c@ed.gov', 'Product Management', 'Account Coordinator', 'Secret'),
  ('Dorolisa Fairney', '3211030242', 'dfairney1d@weebly.com', 'Product Management', 'Quality Engineer', 'Top-Secret');
+
+--  INSERT INTO ETS (mil_id, date_of_enlistment, date_of_expiration, term)
+--  VALUES
+--  ('1', '2/5/2020', '2/5/2022', '1st'),
+--  ('2'),
+--  ('3'),
+--  ('3'),
+
+SELECT * FROM ETS;
 -- SELECT * FROM Contractors;
 -- SELECT * FROM Military;
