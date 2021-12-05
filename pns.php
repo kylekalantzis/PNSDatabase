@@ -48,8 +48,9 @@ echo "Connected to the PNS Database";
         <li> <a href="http://localhost/COMP780_Project/military/delete.php/">Delete</a></li>
         <li> <a href="http://localhost/COMP780_Project/military/edit.php/">Edit</a></li>
         <li> <a href="http://localhost/COMP780_Project/military/view.php/">View Entire Database</a></li>
+        <h4> View ETS dates for Military Personnel: </h4>
+        <li> <a href="http://localhost/COMP780_Project/military/view_full.php/">View All ETS Dates</a></li>
         </div>
 </list>
-    
-</body>
-</html>
+
+
