@@ -1,0 +1,44 @@
+<?php
+// Making connection to XAMP
+$servername = "127.0.0.1";
+$username = "root";
+$password = "Kyle1996";
+$database = "PNSDatabase";
+
+$conn = new mysqli($servername, $username, $password, $database);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";  
+?>
+<!DOCTYPE HTML>
+<HEAD>
+<meta charset = "UTF-8">
+<meta http-equiv ="X-UA-Compatible" content="IE=edge">
+<meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+</head>
+<body>
+<a href="http://localhost/COMP780_Project/pns.php">Go Back</a>
+<form action="" method="POST">
+          ID: <input type="number" name="id"><br>
+          <input type="submit">
+      </form>
+<?php
+     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $id = $_POST["id"];
+        $sql = "SELECT id, Name, phone_number, email, department, job_title, security_clearance FROM Contractors WHERE id=${id}";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()) {
+                echo "<br> ID: " . $row["id"]  . " - Name: " . $row["Name"] . "<br> Phone Number: " . $row["phone_number"] .
+        "<br> Email: " . $row["email"] . "<br> Department: " . $row["department"] . "<br> Job Title: " . $row["job_title"] . 
+        "<br> Security Clearance: " . $row["security_clearance"] . "<br>";
+    }
+} else {
+    echo "Database is Empty";
+}
+     }
+// $conn->close();
+?>
+</div>
+</body>
