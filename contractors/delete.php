@@ -15,11 +15,11 @@ $conn = new mysqli($servername, $username, $password, $database);
 </head>
 <body>
 <a href="http://localhost/COMP780_Project/pns.php">Go Back</a>
-<h3> Please Enter Badge Number to delete</h3>
-<h3> *WARNING ALL INFORMATION WILL BE DELETED ASSOCIATED WITH BADGE NUMBER*</h3>
+<h3> Please Enter ID Number to delete</h3>
+<h3> *WARNING ALL INFORMATION WILL BE DELETED ASSOCIATED WITH ID NUMBER*</h3>
 
 <form action="" method="POST">
-    Contractor Badge: <input type="number" name="id"><br>
+    Contractor ID: <input type="number" name="id"><br>
     <input type="submit">
 </form>
 <?php
