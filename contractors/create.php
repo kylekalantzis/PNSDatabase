@@ -28,7 +28,7 @@ echo "Connected to the PNS Database";
 <h4>Creating new entry for Contractor </h4>
 <form action="" method="POST">
         Name: <input type="text" name="Name"><br>
-        Phone Number: <input type="text" name="phone_number">(xxxxxxxxxx format)<br>
+        Phone Number(0000000000 Format): <input type="text" name="phone_number"><br>
         Email: <input type="text" name="email"><br>
         Department: <input type="text" name="department"><br>
         Job Title: <input type="text" name="job_title"><br>

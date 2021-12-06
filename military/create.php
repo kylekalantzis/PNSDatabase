@@ -14,7 +14,7 @@ echo "Connected to PNS Database";
 
 <!DOCTYPE HTML>
 <HEAD>
-<link rel="stylesheet" href="http://localhost/COMP780_Project/create.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="http://localhost/COMP780_Project/military/create.css?v=<?php echo time(); ?>">
 <meta charset = "UTF-8">
 <meta http-equiv ="X-UA-Compatible" content="IE=edge">
 <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
@@ -22,10 +22,11 @@ echo "Connected to PNS Database";
 <body>
 <div class ="page-content">
 <a href="http://localhost/COMP780_Project/pns.php">Go Back</a>
-<h4> For Military Personnel: </h4>
+<h1> Military </h1>
+<h4> Creating new entry for Military Personnel: </h4>
 <form action="" method="POST">
             Name: <input type="text" name="Name"><br>
-            Phone: <input type="text" name="phone_number">(0000000000 Format)<br>
+            Phone(0000000000 Format): <input type="text" name="phone_number"><br>
             Email: <input type="text" name="email"><br>
             Department: <input type="text" name="department"><br>
             Job Title: <input type="text" name="job_title"><br>
