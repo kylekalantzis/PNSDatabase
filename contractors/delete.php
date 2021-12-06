@@ -9,6 +9,7 @@ $conn = new mysqli($servername, $username, $password, $database);
 ?>
 <!DOCTYPE HTML>
 <HEAD>
+<link rel="stylesheet" href="http://localhost/COMP780_Project/contractors/delete.css?v=<?php echo time(); ?>">
 <meta charset = "UTF-8">
 <meta http-equiv ="X-UA-Compatible" content="IE=edge">
 <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
